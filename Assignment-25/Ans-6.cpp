@@ -6,6 +6,7 @@ Count number of times a function is called. */
 using namespace std;
 
 class Square{
+    int counter = 0;
     private:
         int num;
 
@@ -13,8 +14,10 @@ class Square{
         void Getter(int n)
         {num = n;}
 
-        int Setter()
-        {return num * num;}
+        int Squa()
+        {
+            return num * num;
+        }
 };
 
 
@@ -26,6 +29,6 @@ int main()
 
     Square obj;
     obj.Getter(x);
-    cout<<endl<<"Square of "<<x<<" is "<<obj.Setter()<<endl<<endl;
+    cout<<endl<<"Square of "<<x<<" is "<<obj.Squa()<<endl<<endl;
     return 0;
 }

@@ -9,12 +9,8 @@ class Area{
         int x,y;
 
     public:
-        void setData1(int a)
-        {x = a;}
-        void setData2(int a, int b)
+        void setData(int a, int b)
         {x = a, y = b;}
-        void setData3(int a)
-        {x = a;}
 
         void squareArea()
         {
@@ -29,7 +25,8 @@ class Area{
 
         void circleArea()
         {
-            float k = 3.14*x*x;
+            float k;
+            k = 3.14*x*x;
             cout<<endl<<"Area of circle is : "<<k<<endl<<endl;
         }
 };
@@ -44,13 +41,10 @@ int main()
     cin>>b;
 
     Area p,q,r;
-    p.setData1(a);
-    q.setData2(a,b);
-    r.setData3(a);
-
+    p.setData(a,b);
     p.squareArea();
-    q.rectangleArea();
-    r.circleArea();
+    p.rectangleArea();
+    p.circleArea();
 
     return 0;
 }
