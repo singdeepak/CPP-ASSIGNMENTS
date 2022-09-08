@@ -2,13 +2,9 @@
 
 #include <stdio.h>
 
-void main()
+int main()
 {
-    char name[100];
-    int k,count=0;
-    printf("\nEnter your name\n");
-    gets(name);
-    for(k=0; name[k]!='\0'; k++)
-        count++;
-    printf("Length of string is %d",count);
+    int x = printf("Deepak Negi");
+    printf("\nTotal length of string is %d",x);
+    return 0;
 }
