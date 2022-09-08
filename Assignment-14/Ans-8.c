@@ -1,31 +1,29 @@
 // Write a program to find second smallest in an array.Take array values from the user.
 
 #include <stdio.h>
-#include <limits.h>
 
 int main()
 {
-    int min1, min2, size, k;
-    printf("\nEnter the size of array : ");
-    scanf("%d", &size);
-    int Array[size];
+    int A[10], i, small, Ssmall;
 
-    printf("\nEnter %d Elements for Array\n", size);
-    for (k = 0; k < size; k++)
-        scanf("%d", &Array[k]);
+    printf("\nEnter 10 elements for array\n");
+    for(i=0; i<10; i++)
+        scanf("%d",&A[i]);
 
-    min1 = min2 = INT_MAX;
-
-    for (k = 0; k < size; k++)
+    small = A[0];
+    for(i=1; i<10; i++)
     {
-        if (Array[k] < min1)
+        if(A[i] < small)
         {
-            min2 = min1;
-            min1 = Array[k];
+            Ssmall = small;
+            small = A[i];
         }
-        else if (Array[k] < min2 && Array[k] > min1)
-            min2 = Array[k];
+        else if(A[i] < Ssmall)
+            Ssmall = A[i];
     }
-    printf("\nSecond Smallest = %d\n\n", min2);
+
+    printf("\nSallest element : %d",small);
+    printf("\nSecond smallest : %d\n\n",Ssmall);
+    
     return 0;
 }

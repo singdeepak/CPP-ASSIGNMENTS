@@ -4,29 +4,34 @@
 
 int main()
 {
-    int A[10], k, p = 0, temp;
-    while (p < 10)
+    int i, j, temp;
+    int A[10];
+
+    printf("\n\nEnter 10 elemet for array \n\n");
+    for(i=0; i<10; i++)
+        scanf("%d",&A[i]);
+
+    printf("\n\nBefore sorting : ");
+    for(j=0; j<10; j++)
+        printf("%d\t",A[j]);
+
+
+    for(i=0; i<9; i++)
     {
-        printf("\nEnter %d Number : ", p + 1);
-        scanf("%d", &A[p]);
-        p++;
+        for(j=i+1; j<10; j++)
+        {
+            if(A[i] > A[j])
+            {
+                temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }
     }
 
-
+    printf("\n\nAfter Sorting : ");
+    for(i=0; i<10; i++)
+        printf("%d\t",A[i]);
     printf("\n\n");
-    for(k=0; k<10; k++)
-    {
-        temp = A[k];
-        if(temp > A[k+1])
-            temp = A[k+1];
-        A[k] = temp;
-    }
-
-    for(k=0; k<10; k++)
-    {
-        printf("%d\t",A[k]);
-    }
-    printf("\n\n");
-    
     return 0;
 }

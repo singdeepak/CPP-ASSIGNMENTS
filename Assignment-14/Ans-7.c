@@ -1,30 +1,49 @@
 // Write a program to find second largest in an array.Take array values from the user.
 
 #include <stdio.h>
-#include <limits.h>
 
 int main()
 {
-    int max1, max2, size, k;
-    printf("\nEnter the size of array : ");
-    scanf("%d", &size);
-    int Array[size];
+    int A[10];
+    int i, j, temp, large, slarge;
 
-    printf("\nEnter %d Elements for Array\n", size);
-    for (k = 0; k < size; k++)
-        scanf("%d", &Array[k]);
+    printf("\nEnter 10 elements for array\n");
+    for(i=0; i<10; i++)
+        scanf("%d",&A[i]);
 
-    max1 = max2 = INT_MIN;
-    for (k = 0; k < size; k++)
+
+    large = A[0];
+
+    for(i=1; i<10; i++)
     {
-        if (Array[k] > max1)
+        if(A[i] > large)
         {
-            max2 = max1;
-            max1 = Array[k];
+            slarge = large;
+            large = A[i];
         }
-        else if (Array[k] > max2 && Array[k] < max1)
-            max2 = Array[k];
+        else if(A[i] > slarge)
+            slarge = A[i];
     }
-    printf("\nSecond largest = %d\n\n", max2);
+    printf("\n\nLargest = %d",large);
+    printf("\n\nSecond Largest = %d\n\n",slarge);
+
+
+    /* for(i=0; i<9; i++)
+    {
+        for(j=i+1; j<10; j++)
+        {
+            if(A[i] > A[j])
+            {
+                temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }
+    }
+    printf("\nAfter Sorting : ");
+    for(i=0; i<10; i++) printf("%d\t",A[i]);
+    printf("\n\nSecond Largest Number is : %d\n\n", A[10-2]); */
+
+
     return 0;
 }
